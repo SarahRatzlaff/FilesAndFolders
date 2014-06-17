@@ -1,0 +1,12 @@
+﻿@model FilesAndFolders.Data.Models.File
+<form method="post">
+    @Html.HiddenFor(x => x.FileId) 
+    Name: <input type="text" name="name" value="@Model.Name" />
+    Url: <input type="text" name="url" value="@Model.Url" />
+    Size: <input type="text" name="size" value="@Model.Size" />
+    <input class="btn btn-warning" type="submit" value="Submit Changes"/>
+</form>
+
+<br /><br />
+    <a class="btn btn-warning" href="/Home/DeleteFile/@Model.FileId">Delete File</a>
+

@@ -1,0 +1,21 @@
+﻿@model FilesAndFolders.Data.Models.Folder
+
+@{
+    ViewBag.Title = "AddFolder";
+}
+
+
+<style>
+    body {
+        background: #0094ff;
+    }
+</style>
+
+<h2 style="text-align: center;">Add your Folder</h2> <br /> <br />
+<form method="post">
+
+    @Html.HiddenFor(x => x.FolderId)
+    <div style="width: 310px;"><span style="float: left;">Folder Name</span> <span style="float: right;">@Html.TextBoxFor(x => x.Name) </span></div>
+    <br /><br />
+    <input style=" margin-bottom: 100px; float: left;" type="submit" value="Add Folder" />
+</form>
