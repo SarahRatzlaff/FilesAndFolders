@@ -1,0 +1,26 @@
+﻿@model List<FilesAndFolders.Data.Models.Folder>
+
+@foreach (var folder in Model)
+{
+    <div class="col-md-4">
+        <h2>@folder.Name</h2><a class="btn btn-success" href="/Home/AddFile/@folder.FolderId">Add File</a>
+        <a class="btn btn-danger" href="/Home/FolderDetails/@folder.FolderId">Delete Folder</a>
+        @*<a class="btn btn-success" href="/Home/AddNewFolderToFolder/@folder.FolderId">Add Folder</a>*@
+        <div class="well">
+            @foreach (var file in folder.Files)
+            {
+
+                <strong>Name:  @file.Name</strong>
+               <p>Date: @file.DateCreated</p>
+                <p>Date Updated: @file.DateUpdated</p>
+                <p>Size: @file.Size</p>
+                <p>Url: @file.Url</p>
+                <a class="btn btn-success" href="/Home/FileDetails/@file.FileId">Edit File</a>    <br /> <br /><br />
+            }
+        </div>
+    </div>
+}
+@{
+    ViewBag.Title = "Home Page";
+}
+
